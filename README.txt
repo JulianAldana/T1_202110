@@ -1,4 +1,4 @@
-Julian Ricardo Aldana Galindo
-Semestre inicial: 201520
-Semestre actual: 202110
-201514904
+Grupo 1
+
+Julian Ricardo Aldana
+Juan Andrés Ruiz

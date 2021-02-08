@@ -7,7 +7,7 @@ package model.data_structures;
  * @author Fernando De la Rosa
  *
  */
-public class ArregloDinamico<T> implements IArregloDinamico<T>{
+public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamico<T>{
 	/**
 	 * Capacidad maxima del arreglo
 	 */
@@ -27,7 +27,7 @@ public class ArregloDinamico<T> implements IArregloDinamico<T>{
 	 */
 	public ArregloDinamico( int max )
 	{
-		elementos = (T[]) new Object[max];
+		elementos = (T[])new Comparable[max];
 		tamanoMax = max;
 		tamanoAct = 0;
 	}
@@ -38,7 +38,7 @@ public class ArregloDinamico<T> implements IArregloDinamico<T>{
 		{  // caso de arreglo lleno (aumentar tamaNo)
 			tamanoMax = 2 * tamanoMax;
 			T [ ] copia = elementos;
-			elementos = (T[]) new Object[tamanoMax];
+			elementos = (T[]) new Comparable[tamanoMax];
 			for ( int i = 0; i < tamanoAct; i++)
 			{
 				elementos[i] = copia[i];
@@ -69,12 +69,12 @@ public class ArregloDinamico<T> implements IArregloDinamico<T>{
 		return res;
 	}
 
-	public string buscar(String dato) {
+	public T buscar(T dato) {
 		// TODO implementar
-		String res = null;
+		T res = null;
 		for (int i=0;i<tamanoAct;i++)
 		{
-			if(( elementos[i]).equals(dato))
+			if(( elementos[i]).compareTo(dato)==0)
 			{
 				res = elementos[i];
 			}
@@ -82,10 +82,10 @@ public class ArregloDinamico<T> implements IArregloDinamico<T>{
 		return res;
 	}
 
-	public String eliminar(String dato) {
+	public T eliminar(T dato) {
 		// TODO implementar
-		String eliminado = null;
-		String [ ] nuevo = new String[tamanoMax]; 
+		T eliminado = null;
+		T[] nuevo = (T[])new Comparable[tamanoMax]; 
 		int j = 0;
 		for (int i=0;i<tamanoAct;i++)
 		{
@@ -102,6 +102,17 @@ public class ArregloDinamico<T> implements IArregloDinamico<T>{
 		elementos = nuevo;
 		if(eliminado!=null)tamanoAct--;
 		return eliminado;
+	}
+
+	//TODO 
+	public void invertirElementos()
+	{
+		T[] copia = elementos;
+		elementos = (T[]) new Comparable[tamanoMax];
+		for ( int i = 0; i< tamanoAct; i++)
+		{
+			elementos[tamanoAct-1-i] = copia[i];
+		}
 	}
 
 }

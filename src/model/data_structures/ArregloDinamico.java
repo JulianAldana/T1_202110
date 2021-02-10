@@ -69,9 +69,9 @@ public class ArregloDinamico<T> implements IArregloDinamico<T>{
 		return res;
 	}
 
-	public string buscar(String dato) {
+	public T buscar(T dato) {
 		// TODO implementar
-		String res = null;
+		T res = null;
 		for (int i=0;i<tamanoAct;i++)
 		{
 			if(( elementos[i]).equals(dato))
@@ -82,14 +82,14 @@ public class ArregloDinamico<T> implements IArregloDinamico<T>{
 		return res;
 	}
 
-	public String eliminar(String dato) {
+	public T eliminar(T dato) {
 		// TODO implementar
-		String eliminado = null;
-		String [ ] nuevo = new String[tamanoMax]; 
+		T eliminado = null;
+		T[ ] nuevo = (T[]) new Object[tamanoMax]; 
 		int j = 0;
 		for (int i=0;i<tamanoAct;i++)
 		{
-			if(elementos[i].compareTo(dato)==0)
+			if(elementos[i].equals(dato))
 			{
 				eliminado = elementos[i];
 			}

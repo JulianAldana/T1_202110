@@ -88,10 +88,19 @@ public class Controller {
 				break;	
 
 			case 6: 
+				view.printMessage("--------- \nContenido del Arreglo antes de Invertir: "); 
+				view.printModelo(modelo);
+				modelo.invertirDatos();
+				view.printMessage("--------- \nContenido del Arreglo despues de Invertir: "); 
+				view.printModelo(modelo);
+				view.printMessage("Numero actual de elementos " + modelo.darTamano() + "\n---------");						
+				break;	
+
+			case 7: 
 				view.printMessage("--------- \n Hasta pronto !! \n---------"); 
 				lector.close();
 				fin = true;
-				break;	
+				break;
 
 			default: 
 				view.printMessage("--------- \n Opcion Invalida !! \n---------");

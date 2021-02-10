@@ -11,14 +11,14 @@ public class Modelo {
 	/**
 	 * Atributos del modelo del mundo
 	 */
-	private IArregloDinamico datos;
+	private IArregloDinamico<String> datos;
 
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
 	 */
 	public Modelo()
 	{
-		datos = new ArregloDinamico(7);
+		datos = new ArregloDinamico<String>(7);
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class Modelo {
 	 */
 	public Modelo(int capacidad)
 	{
-		datos = new ArregloDinamico(capacidad);
+		datos = new ArregloDinamico<String>(capacidad);
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class Modelo {
 	 * Requerimiento para retornar los datos
 	 * @return arreglo dinamico con las cadenas de Strings
 	 */
-	public IArregloDinamico darDatos()
+	public IArregloDinamico<String> darDatos()
 	{
 		return datos;
 	}

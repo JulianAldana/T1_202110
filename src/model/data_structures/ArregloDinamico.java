@@ -103,5 +103,16 @@ public class ArregloDinamico<T> implements IArregloDinamico<T>{
 		if(eliminado!=null)tamanoAct--;
 		return eliminado;
 	}
+	
+	//TODO 
+	public void invertirElementos()
+	{
+		T[] copia = elementos;
+		elementos = (T[]) new Comparable[tamanoMax];
+		for ( int i = 0; i< tamanoAct; i++)
+		{
+			elementos[tamanoAct-1-i] = copia[i];
+		}
+	}
 
 }

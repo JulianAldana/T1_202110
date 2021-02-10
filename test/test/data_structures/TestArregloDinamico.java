@@ -9,12 +9,12 @@ import org.junit.Test;
 
 public class TestArregloDinamico {
 
-	private ArregloDinamico arreglo;
+	private ArregloDinamico<String> arreglo;
 	private static int TAMANO=100;
 
 	@Before
 	public void setUp1() {
-		arreglo= new ArregloDinamico(TAMANO);
+		arreglo= new ArregloDinamico<String>(TAMANO);
 	}
 
 	public void setUp2() {
